@@ -7,90 +7,16 @@ from flask import url_for
 from flask import flash
 import os
 import json
-from pymongo import MongoClient
-from bson.objectid import ObjectId
-from authlib.flask.client import OAuth
 from six.moves.urllib.parse import urlencode 
-import googlemaps
 from datetime import datetime
 
-#CONSTANTS
-JWT_PAYLOAD = 'jwt_payload'
-PROFILE_KEY = 'profile'
-
-
-client = MongoClient(os.environ.get('DATABASE_URL'))
-db = client.unsheltereddb
 
 app = Flask(__name__)
-oauth = OAuth(app)
-gmaps = None
-try:
-    gmaps = googlemaps.Client(key=os.environ.get('MAPS_APIKEY'))
-except ValueError as e:
-    gmaps = None
-    pass #ignore error
-
-
-app.config['SECRET_KEY'] = os.environ['FLASK_SECRET_KEY']
-base_url='https://' + 'unsheltered.auth0.com'
-AUTH0_AUDIENCE = base_url + '/userinfo'
-
-auth0 = oauth.register(
-    'auth0',
-    client_id = os.environ['AUTH0_CLIENT_ID'],
-    client_secret = os.environ['AUTH0_CLIENT_SECRET'],
-    api_base_url = base_url,
-    access_token_url = base_url + '/oauth/token',
-    authorize_url = base_url + '/authorize',
-    client_kwargs = {
-        'scope': 'openid profile',
-    },
-)
-
-def isLoggedIn():
-    # print('trolololol')
-    # print('profile' in session)
-    # print(session)
-    return ('profile' in session)
-
-def getCurrentUserId():
-    return session[PROFILE_KEY]['user_id']
-
-
-@app.context_processor
-def injectLoginState():
-    return dict(loggedin=isLoggedIn())
-
-# def requires_auth(f):
-#     @wraps(f)
-#     def decorated(*args, **kwargs):
-#         if not isLoggedIn():
-#             return redirect('/account')
-#         return f(*args, **kwargs)
-
-#     return decorated
-
 
 @app.route('/')
 def home():
     return render_template('homepage.html', shelters=sortByBedsFree(getShelters()))
 
-
-@app.route('/logincallback')
-def callbackHandling():
-    auth0.authorize_access_token()
-    resp = auth0.get('userinfo')
-    userinfo = resp.json()
-
-    session[JWT_PAYLOAD] = userinfo
-    session[PROFILE_KEY] = {
-        'user_id': userinfo['sub'],
-        'name': userinfo['name'],
-        'picture': userinfo['picture']
-    }
-    flash('You were successfully logged in', 'alert-success')
-    return redirect('/account')
 
 @app.route('/volunteer')
 def volunteer():
