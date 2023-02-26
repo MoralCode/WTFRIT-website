@@ -30,11 +30,6 @@ Variable Name | Value
 ------------ | -------------
 FLASK_APP | The name of the main python file. `backend.py` in this case. [More](http://flask.pocoo.org/docs/1.0/tutorial/factory/#run-the-application) [Info](http://flask.pocoo.org/docs/1.0/config/#environment-and-debug-features)
 FLASK_ENV | Set this to `development` if you want to have flask auto-update changed files without having to restart manually. [More](http://flask.pocoo.org/docs/1.0/tutorial/factory/#run-the-application) [Info](http://flask.pocoo.org/docs/1.0/config/#environment-and-debug-features)
-AUTH0_CLIENT_ID | The client ID from your auth0 application. This can be found on the applications page on your Auth0 account
-AUTH0_CLIENT_SECRET | The client secret from your auth0 application. This can be found on the applications page on your Auth0 account
-FLASK_SECRET_KEY | This value is used by flask for signing sessions or something. You can generate it by running `base64.b64encode(os.urandom(50)).decode('utf-8')` in a python3 shell with `os` and `base64` imported. [More Info](http://flask.pocoo.org/docs/1.0/config/#SECRET_KEY)
-DATABASE_URL | This is the URL to your database (looks like `mongodb://`). If you are using mlab this should be easily accessible through your account.
-MAPS_APIKEY | This is your server API key from the [credentials page](https://console.cloud.google.com/apis/credentials) of your Google Cloud Platform console.
 
 To set an environment variable on mac, run `env VARIABLE_NAME=value` 
 on windows run `set VARIABLE_NAME=value`
