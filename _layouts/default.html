@@ -9,11 +9,11 @@
   <header id="site-header">
     {% include header.html %}
   </header>
-  {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+  {%- comment -%} {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
   <div class="alert {{ category }}">{{ message }}</div>
-  {% endfor %} {% endif %} {% endwith %}
+  {% endfor %} {% endif %} {% endwith %} {%- endcomment -%}
   <section class="container-fluid" id="content">
-    {% block content %} {% endblock %}
+    {{content}}
   </section>
   <footer id="site-footer">
     <p>Copyright 2018 ~ NWAPW Project. View the code on
