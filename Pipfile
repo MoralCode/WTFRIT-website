@@ -6,13 +6,10 @@ name = "pypi"
 [packages]
 flask = "*"
 gunicorn = "*"
-google-cloud-firestore = "*"
 python-dotenv = "*"
 requests = "*"
 authlib = "*"
 six = "*"
-pymongo = "*"
-googlemaps = "*"
 dnspython = "*"
 
 [dev-packages]
