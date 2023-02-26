@@ -15,18 +15,3 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 <title>{{page.title}} - UnSheltered</title>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64146907-5"></script>
-<script>
-	//only track views on the heroku server. we dont want to track dev server activity
-	if (window.location.hostname == "un-sheltered.herokuapp.com") {
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-64146907-5');
-
-	}
-</script>
