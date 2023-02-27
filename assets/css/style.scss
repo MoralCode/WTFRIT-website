@@ -23,7 +23,7 @@ html {
 header#site-header {
 	background-color: $header-color;
 	/* background: linear-gradient(#72ccdf, #dcebee); */
-	color: $header-font-color;
+	color: $header-contrast-color;
 	width: 100%;
 	height: 90px;
 	margin: 0 0 10px 0;
@@ -102,7 +102,7 @@ details summary {
 	flex: 1;
 	/*margin: 20px;*/
 	/*padding: 5px;*/
-	background-color: #a4c9e7;
+	background-color: $header-contrast-color;
 }
 
 #selected {
@@ -289,8 +289,8 @@ footer#site-footer {
 }
 
 .dropbtn1 {
-	background-color: #778fcf;
-	color: white;
+	background-color: $header-color;
+	color: $text-color;
 	padding: 16px;
 	font-size: 16px;
 	border: none;
@@ -310,7 +310,7 @@ footer#site-footer {
 .dropdown-content1 {
 	display: none;
 	position: absolute;
-	background-color: #f1f1f1;
+	background-color: $dropdown-content-background;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
@@ -326,7 +326,7 @@ footer#site-footer {
 }
 
 .dropdown-content1 a:hover {
-	background-color: #ddd;
+	background-color: $link-hover-color;
 }
 
 .dropdown1:hover .dropdown-content1 {
@@ -334,7 +334,7 @@ footer#site-footer {
 }
 
 .dropdown1:hover .dropbtn1 {
-	background-color: #066CE2;
+	background-color: $hover-color;
 }
 
 .rightsArticle {
@@ -375,7 +375,7 @@ footer#site-footer {
 }
 
 .dropdown:hover .dropbtn {
-	background-color: #066CE2;
+	background-color: $hover-color;
 }
 
 
@@ -420,9 +420,9 @@ footer#site-footer {
 /* OVERRIDING A BUUUUUUUUNCH OF STUFF FOR CUSTOM BUTTOMS*/
 
 .btn-headerprimary {
-	color: #ffffff;
-	background-color: #778FCF;
-	border-color: #778FCF;
+	color: $text-color;
+	background-color: $header-color;
+	border-color: $header-color;
 	padding: 0px;
 }
 
@@ -431,9 +431,9 @@ footer#site-footer {
 .btn-headerprimary:active,
 .btn-headerprimary.active,
 .open .dropdown-toggle.btn-headerprimary {
-	color: #ffffff;
+	color: $text-color;
 	background-color: rgb(92, 105, 221);
-	border-color: #778FCF;
+	border-color: $header-color;
 }
 
 .btn-headerprimary:active,
@@ -457,11 +457,11 @@ fieldset[disabled] .btn-headerprimary:active,
 .btn-headerprimary.disabled.active,
 .btn-headerprimary[disabled].active,
 fieldset[disabled] .btn-headerprimary.active {
-	background-color: #778FCF;
-	border-color: #778FCF;
+	background-color: $header-color;
+	border-color: $header-color;
 }
 
 .btn-headerprimary .badge {
-	color: #778FCF;
-	background-color: #ffffff;
+	color: $header-color;
+	background-color: $text-color;
 }
