@@ -1,7 +1,11 @@
 
 site:
   social:
-    githubURL: https://github.com/MoralCode/UnSheltered
+    githubURL: https://github.com/WTFRIT/WTFRIT-website
 sass:
   sass_dir: _sass
   style: :compressed
+
+
+exclude: 
+  - 'README.md'
