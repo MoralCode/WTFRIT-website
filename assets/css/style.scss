@@ -338,10 +338,8 @@ footer#site-footer {
 	background-color: $hover-color;
 }
 
-.rightsArticle {
+article {
 	text-align: center;
-
-
 }
 
 #fistImg {
@@ -350,13 +348,9 @@ footer#site-footer {
 	height: auto;
 }
 
-.rightsText {
+article > p {
 	vertical-align: middle;
 	text-align: left;
-
-
-
-
 }
 
 #ventoTitle {
