@@ -5,6 +5,8 @@ site:
 
 baseurl: WTFRIT-website
 
+title: WTFRIT
+
 sass:
   sass_dir: _sass
   style: :compressed
