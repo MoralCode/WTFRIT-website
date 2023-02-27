@@ -2,6 +2,9 @@
 site:
   social:
     githubURL: https://github.com/WTFRIT/WTFRIT-website
+
+baseurl: WTFRIT-website
+
 sass:
   sass_dir: _sass
   style: :compressed
