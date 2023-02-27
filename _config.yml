@@ -3,7 +3,7 @@ site:
   social:
     githubURL: https://github.com/WTFRIT/WTFRIT-website
 
-baseurl: WTFRIT-website
+baseurl: /WTFRIT-website
 
 title: WTFRIT
 
